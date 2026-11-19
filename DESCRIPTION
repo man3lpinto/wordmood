@@ -1,0 +1,20 @@
+Package: wordmood
+Type: Package
+Title: Simple Word-Based Sentiment Scoring for Text Files
+Version: 0.1.0
+Authors@R: c(
+    person("Manuel", "Pinto", email = "mmpinto73@gmail.com", role = c("aut", "cre")))
+Description: Counts positive and negative words in a text document and
+    summarises the result as counts, a ratio, a balance score and a label.
+    Word lists can use a wildcard (*) as prefix or suffix, so that "nause*"
+    matches both "nauseous" and "nauseated", and every pattern can carry a
+    confidence weight between 0 and 1. Negation is handled: a positive
+    word shortly after "not", "never" or "don't" (as in "not very happy")
+    counts as negative. Only base R is required.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports: utils
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1
