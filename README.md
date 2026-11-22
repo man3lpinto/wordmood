@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # wordmood
 
 An R package that scores how positive or negative a text is by counting positive and negative words. Made for the exam in the Intermediate R programming course, using the "semantic algorithm" task. It only uses base R.
@@ -59,3 +60,6 @@ The word lists and weights are our own choices and not taken from a proper estab
 ## Authors
 
 Manuel Pinto
+=======
+# Group-Exam-Intermediate-R
+>>>>>>> b9793c2fa56e92adda09092f6b2996f4ae10b577
