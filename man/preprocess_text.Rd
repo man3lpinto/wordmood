@@ -7,7 +7,8 @@
 preprocess_text(
   file = NULL,
   text = NULL,
-  stopwords = c(".", ",", ";", ":", "!", "?", "(", ")", "\\"", "-", "/", "–", "—"),
+  stopwords = c(".", ",", ";", ":", "!", "?", "(", ")", "\\"", "-", "/", "–", "—",
+    "\\t"),
   header = FALSE
 )
 }

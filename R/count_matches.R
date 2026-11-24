@@ -4,10 +4,10 @@
 #'
 #' A `*` in a pattern is a wildcard:
 #'
-#' `"nause*"` matches words that **start with** "nause" (nauseous, nauseated)
-#' `"*ache"` matches words that **end with** "ache" (headache, stomachache)
-#' `"*as*"` matches words that **contain** "as"
-#' `"happy"` (no `*`) matches only the exact word
+#' * `"nause*"` matches words that **start with** "nause" (nauseous, nauseated)
+#' * `"*ache"` matches words that **end with** "ache" (headache, stomachache)
+#' * `"*as*"` matches words that **contain** "as"
+#' * `"happy"` (no `*`) matches only the exact word
 #'
 #' Each word is counted at most once. If a word matches several patterns, the **highest** weight is used. This lets a broad, less certain pattern such as `"pain*" = 0.75` (which also matches "painting") work together with a specific, certain one such as `"painful" = 1`.
 #'

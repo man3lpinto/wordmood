@@ -28,11 +28,12 @@ Compares a word vector (from \code{\link[=preprocess_text]{preprocess_text()}}) 
 }
 \details{
 A \code{*} in a pattern is a wildcard:
-
-\code{"nause*"} matches words that \strong{start with} "nause" (nauseous, nauseated)
-\code{"*ache"} matches words that \strong{end with} "ache" (headache, stomachache)
-\code{"*as*"} matches words that \strong{contain} "as"
-\code{"happy"} (no \code{*}) matches only the exact word
+\itemize{
+\item \code{"nause*"} matches words that \strong{start with} "nause" (nauseous, nauseated)
+\item \code{"*ache"} matches words that \strong{end with} "ache" (headache, stomachache)
+\item \code{"*as*"} matches words that \strong{contain} "as"
+\item \code{"happy"} (no \code{*}) matches only the exact word
+}
 
 Each word is counted at most once. If a word matches several patterns, the \strong{highest} weight is used. This lets a broad, less certain pattern such as \code{"pain*" = 0.75} (which also matches "painting") work together with a specific, certain one such as \code{"painful" = 1}.
 }

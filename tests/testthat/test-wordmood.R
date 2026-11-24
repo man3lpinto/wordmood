@@ -33,3 +33,31 @@ test_that("missing input errors clearly", {
   expect_error(preprocess_text(), "Provide either")
   expect_error(preprocess_text(file = "nope.txt"), "File not found")
 })
+
+test_that("count_matches uses confidence weights", {
+  w <- c("painful", "painting", "happy")
+  pats <- c("pain*" = 0.75, "painful" = 1)
+  expect_equal(count_matches(w, pats), 2)
+  # highest weight wins: painful = 1, painting = 0.75
+  expect_equal(count_matches(w, pats, weighted = TRUE), 1.75)
+})
+
+test_that("negated positive words count as negative", {
+  for (txt in c("I am not happy", "I am not very happy")) {
+    r <- sentiment_score(text = txt, positive = "happy", negative = "sad")
+    expect_equal(r$n_negated, 1)
+    expect_equal(r$label, "negative")
+  }
+})
+
+test_that("negated negative words count as weakly positive", {
+  r <- sentiment_score(text = "not bad", positive = "good", negative = "bad")
+  expect_equal(r$score_positive, 0.5)
+  expect_equal(r$label, "positive")
+})
+
+test_that("near ties are neutral", {
+  txt <- paste(c(rep("good", 10), rep("bad", 9)), collapse = " ")
+  r <- sentiment_score(text = txt, positive = "good", negative = "bad")
+  expect_equal(r$label, "neutral")
+})

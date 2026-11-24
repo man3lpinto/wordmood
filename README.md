@@ -23,6 +23,9 @@ f <- system.file("extdata", "diary.txt", package = "wordmood")
 sentiment_score(file = f)
 
 sentiment_score(text = "I am not very happy today, but the food was not bad.")
+
+hamlet <- system.file("extdata", "soliloquy.txt", package = "wordmood")
+sentiment_score(file = hamlet)
 ```
 
 `sentiment_score()`
@@ -54,7 +57,7 @@ A few things we added on top of the basic task:
 The package looks at one word at a time, so it does not understand context.
 For example "I never felt better" ends up negative, and "the proud man" is counted as positive even when it is meant badly.
 Negations that are more than two words away are missed ("no amount of coffee seems to help"), and because punctuation is removed the negation check can carry over into the next sentence.
-The word lists and weights are our own choices and not taken from a proper established colelction.
+The word lists and weights are our own choices and not taken from a proper established collection.
 
 ## Authors
 

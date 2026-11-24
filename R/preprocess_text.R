@@ -22,7 +22,7 @@ preprocess_text <- function(file = NULL,
                             text = NULL,
                             stopwords = c(".", ",", ";", ":", "!", "?",
                                           "(", ")", "\"", "-", "/",
-                                          "\u2013", "\u2014"),
+                                          "\u2013", "\u2014","\t"),
                             header = FALSE) {
   if (is.null(file) && is.null(text)) {
     stop("Provide either `file` or `text`.", call. = FALSE) #debug no text
